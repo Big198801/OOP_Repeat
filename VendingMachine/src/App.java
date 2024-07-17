@@ -9,7 +9,10 @@ public class App {
         itemMachine.addProduct(new Product("Bread", 20.0));
         itemMachine.addProduct(new Product("Chips", 40.00));
 
-         itemMachine.getAllProducts();
+        for (Product prod :
+                itemMachine.getAllProducts()) {
+            System.out.println(prod.toString());
+        }
 
     }
 }

@@ -32,10 +32,8 @@ public class VendingMachine {
         }return null;
     }
 
-   public void getAllProducts(){
-       for (Product pr: products
-            ) {
-           System.out.println(pr.toString());
+   public List<Product> getAllProducts(){
+       return products;
        }
    }
-}
+
