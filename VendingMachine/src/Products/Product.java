@@ -13,6 +13,7 @@ public class Product {
 
     public Product(String name){
         this.name = name;
+
     }
 
     public void setPrice(Double value){
@@ -26,11 +27,13 @@ public class Product {
         return this.price;
     }
 
-    public void setName(String name){
-        this.name = name;
-    }
 
     public String getName(){
         return this.name;
+    }
+
+    @Override
+    public String toString(){
+        return "Product { name = '" + name + '\'' + ", cost = " + price + " }";
     }
 }
