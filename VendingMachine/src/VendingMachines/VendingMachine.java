@@ -2,7 +2,7 @@ package VendingMachines;
 
 import Products.Product;
 
-import java.awt.*;
+import java.util.List;
 import java.util.ArrayList;
 
 public class VendingMachine {
@@ -12,11 +12,30 @@ public class VendingMachine {
 
     public  VendingMachine(int volume){
         this.volume = volume;
-        products = new ArrayList<Product>();
-        workLog = new ArrayList<String>();
+        products = new ArrayList<>();
+        workLog = new ArrayList<>();
     }
 
     public void addProduct(Product prod){
         products.add(prod);
     }
+    public void addSales(String line){
+        workLog.add(line);
+    }
+
+    public Product getProductByName(String name){
+        for (Product prod: products
+             ) {
+            if (prod.getName().contains(name)){
+                return prod;
+            }
+        }return null;
+    }
+
+   public void getAllProducts(){
+       for (Product pr: products
+            ) {
+           System.out.println(pr.toString());
+       }
+   }
 }

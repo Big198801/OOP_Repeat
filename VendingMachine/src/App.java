@@ -1,10 +1,15 @@
 import Products.Product;
+import VendingMachines.VendingMachine;
 
 public class App {
     public static void main(String[] args) {
-        System.out.println(2 + 2);
-        Product item1 = new Product("Coffee", 50.00);
-        System.out.println(item1);
+        VendingMachine itemMachine = new VendingMachine(300);
+        itemMachine.addProduct(new Product("Coffee", 50.00));
+        itemMachine.addProduct(new Product("Tea", 30.00));
+        itemMachine.addProduct(new Product("Bread", 20.0));
+        itemMachine.addProduct(new Product("Chips", 40.00));
+
+         itemMachine.getAllProducts();
 
     }
 }
