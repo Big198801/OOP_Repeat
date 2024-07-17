@@ -4,8 +4,8 @@ import VendingMachines.VendingMachine;
 public class App {
     public static void main(String[] args) {
         VendingMachine itemMachine = new VendingMachine(300);
-        itemMachine.addProduct(new Product("Coffee", 50.00));
-        itemMachine.addProduct(new Product("Tea", 30.00));
+        itemMachine.addProduct(new Product("Mars", 50.00));
+        itemMachine.addProduct(new Product("Twix", 30.00));
         itemMachine.addProduct(new Product("Bread", 20.0));
         itemMachine.addProduct(new Product("Chips", 40.00));
 
