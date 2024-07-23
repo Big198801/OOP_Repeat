@@ -19,7 +19,7 @@ public class Student extends User implements Comparable<Student>{
                 " " + super.getLastName()+
                 " Адрес: "+ super.getAdress()+
                 " Возраст: " + super.getAge() +
-                " id: " + getId();
+                " id: " + getId() + "\n";
     }
 
     public long getId() {

@@ -49,7 +49,7 @@ public class User {
     public String toString(){
         return
                "User ФИО: " + getFirstName()+" " + getLastName()+
-                       " Адрес: "+ getAdress()+  " Возраст: " + getAge();
+                       " Адрес: "+ getAdress()+  " Возраст: " + getAge() + "\n";
 
     }
 }
