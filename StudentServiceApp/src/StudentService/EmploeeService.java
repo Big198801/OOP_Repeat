@@ -1,7 +1,9 @@
 package StudentService;
 
 import StudentDomen.Emploee;
+import StudentDomen.Student;
 import StudentDomen.StudentGroup;
+import StudentDomen.UserComparator;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,6 +27,12 @@ public class EmploeeService implements iUserService<Emploee> {
         count++;
         employes.add(per);
 
+    }
+
+    public List<Emploee> getSortedbyFioStudentGroup(int numberGroup){
+        List<Emploee> emps = new ArrayList<>(employes);
+        emps.sort(new UserComparator<Emploee>());
+        return emps;
     }
 
 

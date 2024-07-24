@@ -1,6 +1,8 @@
 package StudentService;
 
+import StudentDomen.Student;
 import StudentDomen.StudentGroup;
+import StudentDomen.UserComparator;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,5 +19,10 @@ public class StudentGroupService {
 
     public List<StudentGroup> getAll(){
         return this.groups;
+    }
+    public List<Student> getSortedbyFioStudentGroup(int numberGroup){
+        List<Student> students = new ArrayList<>(groups.get(numberGroup).getStudents());
+        students.sort(new UserComparator<Student>());
+        return students;
     }
 }
