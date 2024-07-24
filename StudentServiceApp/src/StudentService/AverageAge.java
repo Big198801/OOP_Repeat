@@ -12,7 +12,7 @@ public class AverageAge <T extends User> {
         this.peoples = peoples;
     }
 
-    public <T extends User> int avgAge(List<T> peoples){
+    public static  <T extends User> int avgAge(List<T> peoples){
         int avg = 0;
         for (T pepl: peoples) {
             avg += pepl.getAge();

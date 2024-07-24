@@ -1,37 +1,38 @@
 package StudentService;
 
-import StudentDomen.Emploee;
-import StudentDomen.Student;
-import StudentDomen.StudentGroup;
-import StudentDomen.UserComparator;
+import StudentDomen.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class EmploeeService implements iUserService<Emploee> {
+public class EmploeeService implements iUserService<User> {
     private int count;
-    private List<Emploee> employes;
+    private List<User> employes;
 
     public EmploeeService(){
         this.employes = new ArrayList<>();
     }
 
     @Override
-    public List<Emploee> getAll() {
+    public List<User> getAll() {
         return this.employes;
     }
 
     @Override
     public void create(String firstName, String lastName, String adress, int age) {
-        Emploee per = new Emploee(firstName, lastName, adress, age, count);
+        User per = new User(firstName, lastName, adress, age);
         count++;
         employes.add(per);
 
     }
 
-    public List<Emploee> getSortedbyFioStudentGroup(int numberGroup){
-        List<Emploee> emps = new ArrayList<>(employes);
-        emps.sort(new UserComparator<Emploee>());
+    public void add(User user){
+        employes.add(user);
+    }
+
+    public List<User> getSortedbyFioStudentGroup(int numberGroup){
+        List<User> emps = new ArrayList<>(employes);
+        emps.sort(new UserComparator<User>());
         return emps;
     }
 
