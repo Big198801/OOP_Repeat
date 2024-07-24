@@ -1,5 +1,9 @@
 package StudentDomen;
 
+import StudentService.AverageAge;
+
+import java.util.List;
+
 public class User {
     private String firstName;
     private String lastName;
@@ -52,4 +56,6 @@ public class User {
                        " Адрес: "+ getAdress()+  " Возраст: " + getAge() + "\n";
 
     }
+
+
 }

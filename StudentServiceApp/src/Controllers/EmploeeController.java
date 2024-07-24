@@ -1,10 +1,11 @@
 package Controllers;
 
 import StudentDomen.Emploee;
+import StudentDomen.Teacher;
 import StudentDomen.User;
 import StudentService.EmploeeService;
 
-public class EmploeeController implements iUserController<Emploee>{
+public class EmploeeController implements iUserController<Emploee, Teacher>{
     private final EmploeeService empService = new EmploeeService();
 
     @Override

@@ -2,9 +2,10 @@ package Controllers;
 
 import StudentDomen.Student;
 import StudentDomen.StudentGroup;
+import StudentDomen.Teacher;
 import StudentService.StudentService;
 
-public class StudentController implements iUserController<Student>{
+public class StudentController implements iUserController<Student, Teacher>{
     private final StudentService dataService = new StudentService();
     private final StudentService groupService = new StudentService();
     @Override

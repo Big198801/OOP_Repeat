@@ -1,4 +1,5 @@
 import Controllers.EmploeeController;
+import Controllers.TeacherController;
 import StudentDomen.*;
 
 import java.time.Period;
@@ -38,11 +39,16 @@ public class App {
 //        for (StudentGroup group : course1) {
 //            System.out.println(group);
 //        }
-        Emploee person1 = new Emploee("Sasha", "Petrov", "Moscow", 34, 134);
+        Teacher person1 = new Teacher("Sasha", "Petrov", "Moscow", 34);
+        person1.setLevel("eee");
+        person1.setTeacherId(456);
+
+
         Student s1 = new Student("Николай", "Афанасьев", "Чебоксары", 35, 1);
        // EmploeeController contrEmp = new EmploeeController();
 
-        EmploeeController.paySalary(person1);
+
+        TeacherController.paySalary(person1);
         //EmploeeController.paySalary((s1); // типо-безопасный благодаря Generic
         Integer[]   studHours = {123, 123, 345, 543, 645};
         System.out.println(EmploeeController.means(studHours));

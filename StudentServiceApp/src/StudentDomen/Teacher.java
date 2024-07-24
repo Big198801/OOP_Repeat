@@ -11,6 +11,12 @@ public class Teacher extends  User {
         this.teacherId= teacherId;
         this.academicDegree = academicDegree;
     }
+
+    public Teacher(String firstName, String lastName, String adress, int age) {
+        super(firstName, lastName, adress, age);
+
+    }
+
     public int getTeacherId() {
         return teacherId;
     }
