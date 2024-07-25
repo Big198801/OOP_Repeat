@@ -1,10 +1,14 @@
 import Controller.Controller;
+import Controller.iGetModel;
+import Controller.iGetView;
+import Model.FileRepo;
 import Model.Model;
 import Model.Student;
 import View.View;
 
 import java.util.ArrayList;
 import java.util.List;
+
 
 public class App {
     public static void main(String[] args) {
@@ -19,9 +23,16 @@ public class App {
         students.add(s3);
         students.add(s4);
         students.add(s5);
+
         students.add(s6);
-        Model model = new Model(students);
-        View view = new View();
+        for (Student pers : students) {
+
+        }
+        iGetModel model = new Model(students);
+        iGetModel modelFileRepo = new FileRepo("StudentDB.txt");
+
+
+        iGetView view = new View();
         Controller control = new Controller(view, model);
         control.updateView();
     }
