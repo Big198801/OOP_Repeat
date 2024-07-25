@@ -1,13 +1,17 @@
 package Controller;
 
 import Model.Student;
+import View.View;
+import View.ViewEng;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Controller {
     private List<Student> students;
     private iGetView view;
+
     private iGetModel model;
 
     public Controller(iGetView view, iGetModel model) {
@@ -31,12 +35,53 @@ public class Controller {
         //MVP
         getAllStudent();
         if (testData()) {
-            view.printAllStudents(students);
+            view.printAllStudent(students);
+        }else {
+            System.out.println("список студентов пуст");
         }
-        System.out.println("список студентов пуст");
 
         //MVC
         //view.printAllStudents(model.getAllStudents());
     }
 
+    /**
+     * метод для выбора интерфейса языка
+     * @return экземпляр View или ViewEng
+     */
+    public iGetView chooseProgrammLanguage(){
+        System.out.println("выберите язык: 'r' -ru,  'e' -eng  :  ");
+        String command = view.promt();
+        if (command.charAt(0) == 'r'){
+            System.out.println("выбран русский язык");
+            return new View();
+
+        } else if (command.charAt(0) == 'e'){
+            System.out.println("english language");
+            return new ViewEng();
+        }else{
+            System.out.println("неверный ввод");
+            chooseProgrammLanguage();
+        }return null;
+    }
+
+    public void run(){
+
+        Commands com = Commands.NONE;
+        boolean getNewIteration = true;
+
+        while (getNewIteration){
+            String command = view.promt();
+            com = Commands.valueOf(command.toUpperCase());
+            switch (com){
+                case EXIT:
+                    view.exitMessage();
+                    getNewIteration = false;
+                    break;
+                case LIST:
+                    getAllStudent();
+                    updateView();
+                    break;
+            }
+        }
+    }
 }
