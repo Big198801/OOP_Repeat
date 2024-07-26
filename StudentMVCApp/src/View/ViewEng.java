@@ -26,6 +26,13 @@ public class ViewEng implements iGetView {
         }
 
     @Override
+    public int promtInt() {
+        System.out.println("numer to delete: ");
+        Scanner sc = new Scanner(System.in);
+        return sc.nextInt();
+    }
+
+    @Override
     public void exitMessage() {
         System.out.println("exit....");
     }

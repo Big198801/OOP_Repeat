@@ -21,6 +21,11 @@ public class View implements iGetView {
         Scanner sc = new Scanner(System.in);
         return sc.nextLine();
     }
+    public int promtInt(){
+        System.out.println("номер строки для удаления: ");
+        Scanner sc = new Scanner(System.in);
+        return sc.nextInt();
+    }
 
     @Override
     public void exitMessage() {

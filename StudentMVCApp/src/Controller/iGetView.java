@@ -8,6 +8,8 @@ public interface iGetView {
     void printAllStudent(List<Student> students);
     String promt();
 
+    int promtInt();
+
     void exitMessage();
 
 }

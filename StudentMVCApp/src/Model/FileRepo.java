@@ -8,6 +8,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class FileRepo implements iGetModel {
     private String fileName;
@@ -76,5 +77,21 @@ public class FileRepo implements iGetModel {
     public List<Student> getAllStudent() {
         readAllStudentsFromFile();
         return students;
+    }
+
+    @Override
+    public <E extends Number> void deleteStudent(E number) {
+        System.out.println("введите Имя и Фамилию удаляемого: ");
+        Scanner sc = new Scanner(System.in);
+        String[] choice = sc.nextLine().split(" ");
+        for (Student pers :
+                students) {
+            if (pers.getFirstName().toLowerCase().equals(choice[0].toLowerCase()) & pers.getLastName().toLowerCase().equals(choice[1].toLowerCase())){
+                students.remove(pers);
+            }else {
+                System.out.println("st");
+            }
+        }
+
     }
 }

@@ -81,6 +81,14 @@ public class Controller {
                     getAllStudent();
                     updateView();
                     break;
+                case DELETE:
+                    getAllStudent();
+                    updateView();
+                    int choice =  view.promtInt();
+                    model.deleteStudent((long)choice);
+                    break;
+
+
             }
         }
     }

@@ -15,5 +15,17 @@ public class Model implements iGetModel {
         return students;
     }
 
+    @Override
+    public <E extends Number> void deleteStudent(E number) {
+        if ((int)number > 0 & (int)number <=  students.size()) {
+            students.remove((int) number - 1);
+        }
+        else{
+            System.out.println("неверный ввод");
+        }
+    }
 
 }
+
+
+

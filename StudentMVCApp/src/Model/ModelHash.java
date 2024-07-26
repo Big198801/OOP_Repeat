@@ -7,6 +7,7 @@ import java.util.HashMap;
 import java.util.List;
 
 public class ModelHash  implements iGetModel {
+
     private HashMap<Long, Student> studentHashMap;
 
     public ModelHash(HashMap<Long, Student> studentHashMap){
@@ -25,4 +26,17 @@ public class ModelHash  implements iGetModel {
         }
         return studentList;
     }
+
+    @Override
+    public <E extends Number> void deleteStudent(E number) {
+        if (studentHashMap.containsKey((Long) number)) {
+            studentHashMap.remove((Long) number);
+        }
+        else {
+            System.out.println("нет в списке");
+
+        }
+    }
+
+
 }
